@@ -6,15 +6,15 @@
  */
 int string_len(const char *str)
 {
-        int len = 0;
+	int len = 0;
 
-        while (*str != '\0')
-        {
-                len++;
-                str++;
-        }
+	while (*str != '\0')
+	{
+		len++;
+		str++;
+	}
 
-        return (len);
+	return (len);
 }
 /**
  * print_the_buff - print the content that hlod buff.
@@ -25,14 +25,14 @@ void print_the_buff(char buffer[], int *buff_ind)
 {
 	int byte_write;
 
-        if (*buff_ind > 0)
-        {
+	if (*buff_ind > 0)
+	{
 		byte_write = write(1, buffer, *buff_ind);
 		if (byte_write < 0)
 		{
 			perror("wrte faile");
 		}
-        }
-        *buff_ind = 0;
+	}
+	*buff_ind = 0;
 }
 
