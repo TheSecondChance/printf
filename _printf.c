@@ -6,9 +6,9 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	char hold_buff[1024];
-	int count = 0;
+	int i, leng, count = 0;
+	char c, hold_buff[1024];
+	char *s;
 	va_list args;
 
 	va_start(args, format);
@@ -20,17 +20,17 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'c')
 			{
-				char c = va_arg(args, int);
+				c = va_arg(args, int);
 
 				hold_buff[count] = c;
 				count++;
 			}
 			else if (*format == 's')
 			{
-				char *s = va_arg(args, char *);
-				int len = string_len(s);
+				s = va_arg(args, char *);
+				leng = string_len(s);
 
-				for (i = 0; i < len; i++)
+				for (i = 0; i < leng; i++)
 				{
 					hold_buff[count] = s[i];
 					count++;
