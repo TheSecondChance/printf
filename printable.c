@@ -23,9 +23,15 @@ int string_len(const char *str)
  */
 void print_the_buff(char buffer[], int *buff_ind)
 {
+	int byte_writ;
+
         if (*buff_ind > 0)
         {
-                write(1, buffer, *buff_ind);
+		byte_write = (1, buffer, *buff_ind);
+		if (byte_writ < 0)
+		{
+			perror("wrte faile");
+		}
         }
         *buff_ind = 0;
 }
