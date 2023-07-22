@@ -1,4 +1,11 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+int string_len(const char *str);
+void print_the_buff(char buffer[], int *buff_ind);
+
 /**
  * _printf - function that produces output according to a format.
  * @format: format passed to function
@@ -54,4 +61,22 @@ int _printf(const char *format, ...)
 	hold_buff[count] = '\0';
 	print_the_buff(hold_buff, &count);
 	return (count);
+}
+int string_len(const char *str)
+{
+	int len = 0;
+	while (*str != '\0')
+	{
+		len++;
+		str++;
+	}
+	return len;
+}
+void print_the_buff(char buffer[], int *buff_ind)
+{
+	if (*buff_ind > 0)
+	{
+		write(1, buffer, *buff_ind);
+	}
+	*buff_ind = 0;
 }
