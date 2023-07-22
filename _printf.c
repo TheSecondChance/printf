@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	char hold_buff[1024];
 	int count = 0;
 	va_list args;
+
 	va_start(args, format);
 
 	while (*format != '\0')
@@ -27,6 +28,7 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				char c = va_arg(args, int);
+
 				hold_buff[count] = c;
 				count++;
 			}
@@ -34,6 +36,7 @@ int _printf(const char *format, ...)
 			{
 				char *s = va_arg(args, char *);
 				int len = string_len(s);
+
 				for (i = 0; i < len; i++)
 				{
 					hold_buff[count] = s[i];
@@ -62,16 +65,28 @@ int _printf(const char *format, ...)
 	print_the_buff(hold_buff, &count);
 	return (count);
 }
+/**
+ * string_len - count the length of string.
+ * @str: passed string into func.
+ * Return: len.
+ */
 int string_len(const char *str)
 {
 	int len = 0;
+
 	while (*str != '\0')
 	{
 		len++;
 		str++;
 	}
-	return len;
+
+	return (len);
 }
+/**
+ * print_the_buff - print the content that hlod buff.
+ * @buffer: content of array.
+ * @buff_ind: add next char represent length.
+ */
 void print_the_buff(char buffer[], int *buff_ind)
 {
 	if (*buff_ind > 0)
