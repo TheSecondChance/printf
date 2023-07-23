@@ -18,6 +18,10 @@ int _printf(char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == ' ' || *format == '\0')
+			{
+				return (-1);
+			}
 			for (i = 0; i < 3; i++)
 			{
 				if (fun_list[i].c == *format)
