@@ -1,41 +1,69 @@
 #include "main.h"
 /**
- * string_len - count the length of string.
- * @str: passed string into func.
- * Return: len.
+ * _put - fucnt ta
+ * @str: strign
+ * @args: id on t ne twowt nf
+ * Return: cotn
  */
-int string_len(const char *str)
+
+int _put(char *str, va_list args)
 {
-	int len = 0;
+	int count = 0;
+	char kal;
+	(void)kal;
 
-	if (str == NULL)
-		return (-1);
+	kal = va_arg(args, int);
 
-	while (*str != '\0')
-	{
-		len++;
-		str++;
-	}
-
-	return (len);
+	_pchar(kal);
+	count++;
+	return (count);
 }
+
 /**
- * print_the_buff - print the content that hlod buff.
- * @buffer: content of array.
- * @buff_ind: add next char represent length.
+ * _putstr - thsi is that
+ * @str: string
+ * @args: argument
  */
-void print_the_buff(char buffer[], int *buff_ind)
+int _putstr(char *str, va_list args)
 {
-	int byte_write;
+	int count = 0;
+	char *kal;
+	(void)str;
 
-	if (*buff_ind > 0)
+	kal = va_arg(args, char *);
+	if (!kal)
+		kal = "NULL";
+
+	while (*kal)
 	{
-		byte_write = write(1, buffer, *buff_ind);
-		if (byte_write < 0)
-		{
-			perror("wrte faile");
-		}
+		_pchar(*kal);
+		kal++;
+		count++;
 	}
-	*buff_ind = 0;
+	return (count);
 }
 
+/**
+ * print_perce - print persencet
+ * @str: strng taht
+ * @args: argumment
+ * Return: if correct tru
+ */
+
+int print_perce(char *str, va_list args)
+{
+	(void)str;
+	(void)args;
+	_pchar('%');
+	return (1);
+}
+
+/**
+ * _pchar - print vu
+ * @c: caracter
+ * Return: charcter tath
+ */
+int _pchar(char c)
+{
+	return (write(1, &c, 1));
+}

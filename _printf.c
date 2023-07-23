@@ -11,9 +11,9 @@ int _printf(char *format, ...)
 	int i, char_count = 0;
 	va_list args;
 
-	struct fun fun_lsit[3] = {{'c', _putchar}, {'s', _putstr},
+	struct fun fun_list[3] = {{'c', _put}, {'s', _putstr},
 		{'%', print_perce}};
-	va_start(args, formatstr);
+	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
@@ -31,7 +31,7 @@ int _printf(char *format, ...)
 		else
 		{
 			_pchar(*format);
-			char_list++;
+			char_count++;
 		}
 		format++;
 	}

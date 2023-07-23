@@ -6,15 +6,16 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-struct func {
+struct fun {
   char c;
   int (*fptr)(char *, va_list);
 };
 
-int _putchar(char *str, va_list args);
-int _putstring(char *str, va_list args);
+int _put(char *str, va_list args);
+int _putstr(char *str, va_list args);
 int _pchar(char c);
-int print_percent(char *str, va_list args);
+int print_perce(char *str, va_list args);
 int _printf(char *formatstr, ...);
+int _putchar(char c);
 
 #endif
