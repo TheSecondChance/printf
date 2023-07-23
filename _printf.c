@@ -8,7 +8,8 @@ int _printf(char *format, ...)
 {
 	int i, char_count = 0;
 	va_list args;
-	struct fun fun_list[4] = {{'c', _put}, {'s', _putstr}, {'%', print_perce}, {'\0', NULL}};
+	fun_list my_aar[4] = {{'c', _put}, {'s', _putstr}, {'%', print_perce},
+		{'\0', NULL}};
 
 	if (format == NULL)
 		return (-1);
@@ -24,9 +25,9 @@ int _printf(char *format, ...)
 			}
 			for (i = 0; i < 4; i++)
 			{
-				if (fun_list[i].c == *format)
+				if (my_aar[i].c == *format)
 				{
-					char_count += fun_list[i].fptr(format, args);
+					char_count += my_aar[i].fptr(format, args);
 					break;
 				}
 			}
