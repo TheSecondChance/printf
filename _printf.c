@@ -27,6 +27,10 @@ int _printf(char *format, ...)
 				}
 			}
 		}
+		else if (*format == '\0')
+		{
+			return (-1);
+		}
 		else
 		{
 			_pchar(*format);
