@@ -10,8 +10,6 @@ int _printf(char *format, ...)
 	va_list args;
 	struct fun fun_list[3] = {{'c', _put}, {'s', _putstr}, {'%', print_perce}};
 
-	if (*format == NULL)
-		return (0);
 	va_start(args, format);
 	while (*format)
 	{
