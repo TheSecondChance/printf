@@ -1,63 +1,40 @@
 #include "main.h"
 /**
- * _printf - function that produces output according to a format.
- * @format: format passed to function
- * Return: for know i don't know.
+ * _printf - function taht print %s, %.
+ * @format: that passed.
+ * struct fun - hh i don't know.
+ * fun_list: i odn. some adle dad.
+ * Return: no idea.
  */
-int _printf(const char *format, ...)
+int _printf(char *format, ...)
 {
-	int i, leng, count = 0;
-	char c, hold_buff[1024];
-	char *s;
+	int i, char_count = 0;
 	va_list args;
 
-	if (format == NULL)
-		return (-1);
-
-	va_start(args, format);
-
-	while (*format != '\0')
+	struct fun fun_lsit[3] = {{'c', _putchar}, {'s', _putstr},
+		{'%', print_perce}};
+	va_start(args, formatstr);
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'c')
+			for (i = 0; i < 3; i++)
 			{
-				c = va_arg(args, int);
-
-				hold_buff[count] = c;
-				count++;
-			}
-			else if (*format == 's')
-			{
-				s = va_arg(args, char *);
-				leng = string_len(s);
-
-				for (i = 0; i < leng; i++)
+				if (fun_list[i].c == *format)
 				{
-					hold_buff[count] = s[i];
-					count++;
+					char_count += fun_list[i].fptr(format, args);
+					break;
 				}
-			}
-			else if (*format == '%')
-			{
-				hold_buff[count] = '%';
-				count++;
 			}
 		}
 		else
 		{
-			hold_buff[count] = *format;
-			count++;
-		}
-		if (count >= 1024 - 1)
-		{
-			print_the_buff(hold_buff, &count);
+			_pchar(*format);
+			char_list++;
 		}
 		format++;
 	}
 	va_end(args);
-	hold_buff[count] = '\0';
-	print_the_buff(hold_buff, &count);
-	return (count);
+	return (char_count);
 }

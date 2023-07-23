@@ -6,8 +6,15 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int _printf(const char *format, ...);
-int string_len(const char *str);
-void print_the_buff(char buffer[], int *buff_ind);
+struct func {
+  char c;
+  int (*fptr)(char *, va_list);
+};
+
+int _putchar(char *str, va_list args);
+int _putstring(char *str, va_list args);
+int _pchar(char c);
+int print_percent(char *str, va_list args);
+int _printf(char *formatstr, ...);
 
 #endif
