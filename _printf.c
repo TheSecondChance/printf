@@ -2,17 +2,14 @@
 /**
  * _printf - function taht print %s, %.
  * @format: that passed.
- * struct fun - hh i don't know.
- * fun_list: i odn. some adle dad.
  * Return: no idea.
  */
 int _printf(char *format, ...)
 {
 	int i, char_count = 0;
 	va_list args;
+	struct fun fun_list[3] = {{'c', _put}, {'s', _putstr}, {'%', print_perce}};
 
-	struct fun fun_list[3] = {{'c', _put}, {'s', _putstr},
-		{'%', print_perce}};
 	va_start(args, format);
 	while (*format)
 	{
