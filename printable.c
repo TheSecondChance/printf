@@ -10,7 +10,7 @@ int _put(char *str, va_list args)
 {
 	int count = 0;
 	char kal;
-	(void)kal;
+	(void)str;
 
 	kal = va_arg(args, int);
 
