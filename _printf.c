@@ -32,6 +32,7 @@ int _printf(char *format, ...)
 				}
 				else
 				{
+					_pchar('%');
 					_pchar(*format);
 					char_count++;
 					break;
