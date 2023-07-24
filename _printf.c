@@ -23,6 +23,10 @@ int _printf(char *format, ...)
 			{
 				return (-1);
 			}
+			if (*format == '%')
+			{
+				return (-1);
+			}
 			while (i < 4)
 			{
 				if (my_aar[i].c == *format)

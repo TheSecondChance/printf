@@ -11,6 +11,7 @@ int main(void)
 {
 	_printf("try _printf %c \n", 'A');
 	_printf("prrintf %k \n");
+	_printf("%%\n");
 	printf("normal printf %k \n");
 
 	return (0);
