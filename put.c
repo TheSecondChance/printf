@@ -12,7 +12,11 @@ int _putstr(char *str, va_list args)
 	(void)str;
 	kal = va_arg(args, char *);
 	if (!kal)
+	{
 		kal = "NULL";
+		return (6);
+	}
+	
 	while (*kal)
 	{
 		_pchar(*kal);
