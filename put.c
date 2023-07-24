@@ -16,7 +16,6 @@ int _putstr(char *str, va_list args)
 		kal = "NULL";
 		return (6);
 	}
-	
 	while (*kal)
 	{
 		_pchar(*kal);
