@@ -6,7 +6,7 @@
  */
 int _printf(char *format, ...)
 {
-	int i, char_count = 0;
+	int i = 0, char_count = 0;
 	va_list args;
 	fun_list my_aar[4] = {{'c', _put}, {'s', _putstr}, {'%', print_perce},
 		{'\0', NULL}};
@@ -23,12 +23,19 @@ int _printf(char *format, ...)
 			{
 				return (-1);
 			}
-			for (i = 0; i < 4; i++)
-				;
-			if (my_aar[i].c == *format)
+			while (i < 4)
 			{
-				char_count += my_aar[i].fptr(format, args);
-				break;
+				if (my_aar[i].c == *format)
+				{
+					char_count += my_aar[i].fptr(format, args);
+					break;
+				}
+				else
+				{
+					_pchar(*format);
+					char_count++;
+					break;
+				}
 			}
 		}
 		else if (*format == '\0')
