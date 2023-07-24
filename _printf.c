@@ -24,12 +24,11 @@ int _printf(char *format, ...)
 				return (-1);
 			}
 			for (i = 0; i < 4; i++)
+				;
+			if (my_aar[i].c == *format)
 			{
-				if (my_aar[i].c == *format)
-				{
-					char_count += my_aar[i].fptr(format, args);
-					break;
-				}
+				char_count += my_aar[i].fptr(format, args);
+				break;
 			}
 		}
 		else if (*format == '\0')
