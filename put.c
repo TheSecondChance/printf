@@ -7,12 +7,6 @@
  */
 int _putstr(char *str, va_list args)
 {
-	if (str == NULL)
-	{
-		str = "(null)";
-	}
-	return (6);
-
 	int count = 0;
 	char *kal;
 	(void)str;
