@@ -14,7 +14,8 @@ typedef struct fun
 {
 	char c;
 	int (*fptr)(char *, va_list);
-}fun_list;
+}
+fun_list;
 
 int _put(char *str, va_list args);
 int _putstr(char *str, va_list args);
