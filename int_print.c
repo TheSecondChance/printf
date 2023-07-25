@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * int_print - prints a number
+ * print_integer - prints a number interger number
  *
- * @args: argument list
- *
- * Return: numbers printed
+ * @args: argument list the function
+ * Return: number the number print
  */
 
-int int_print(va_list args)
+int print_integer(va_list args)
 {
+	int num;
 
-	int n = va_arg(args, int);
+	num = va_arg(args, int);
 
-	return (get_int(n));
+	return (int_new(num));
 }
