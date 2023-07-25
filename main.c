@@ -9,10 +9,16 @@
  */
 int main(void)
 {
-	_printf("try _printf %c \n", 'A');
-	_printf("prrintf %k \n");
-	_printf("%%\n");
-	printf("normal printf %k \n");
 
-	return (0);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+printf("\n");
+    _printf("Percent:[%%]\n");
+    printf("Percent:[%%]\n");
+printf("\n");
+    _printf("Unknown:[% r]\n");
+    printf("Unknown:[% r]\n");
+    return (0);
 }

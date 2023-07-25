@@ -7,10 +7,22 @@
  *
  * Return: Always 0
  */
-int main()
+int main(void)
 {
-    _printf("Hello, %s! You are %c years old, your blood type is %c\n", "Alice", '3', 'B');
-    _printf("The %% symbol is used to represent a percent sign.\n");
+    
 
-    return 0;
+    _printf("Let's try to printf a simple sentence.\n");
+    printf("Let's try to printf a simple sentence.\n");
+
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+
+    _printf("Percent:[%%]\n");
+    printf("Percent:[%%]\n");
+
+    _printf("Unknown:[%r]\n");
+    printf("Unknown:[%r]\n");
+    return (0);
 }

@@ -1,27 +1,29 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef MAIN_H
+#define MAIN_H
 
-#include <stdarg.h>
-#include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-/**
- * struct fun - that store format spacifire
- * @c: that character passed
- * @fptr: function pointer
- */
-typedef struct fun
-{
-	char c;
-	int (*fptr)(char *, va_list);
-}
-fun_list;
+#include <limits.h>
 
-int _put(char *str, va_list args);
-int _putstr(char *str, va_list args);
-int _pchar(char c);
-int print_perce(char *str, va_list args);
-int _printf(char *formatstr, ...);
-int _putchar(char c);
+/**
+ * struct op - specifier selecter
+ * @f: function pointer to function
+ */
+
+struct op
+{
+	char *choice;
+	int (*f)(va_list args);
+};
+
+int _putchar(int c);
+int _printf(const char *format, ...);
+int int_print(va_list);
+int (*get_spes(const char *, int))(va_list);
+int _str(va_list);
+int _c(va_list);
+int _perc(va_list);
+int get_int(int);
+int un_int(va_list);
 
 #endif

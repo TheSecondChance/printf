@@ -5,9 +5,23 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+/**
+ * struct fun - that store format spacifire
+ * @c: that character passed
+ * @fptr: function pointer
+ */
+typedef struct fun
+{
+	char c;
+	int (*fptr)(char *, va_list);
+}
+fun_list;
 
-int _printf(const char *format, ...);
-int my_strlen(const char *str);
-void print_buffer(char buffer[], int *buff_ind);
+int _put(char *str, va_list args);
+int _putstr(char *str, va_list args);
+int _pchar(char c);
+int print_perce(char *str, va_list args);
+int _printf(char *formatstr, ...);
+int _putchar(char c);
 
 #endif

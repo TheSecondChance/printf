@@ -1,67 +1,61 @@
 #include "main.h"
-
-int my_strlen(const char *str);
-void print_buffer(char buffer[], int *buff_ind);
-
-int _printf(const char *format, ...)
+/**
+ * _printf - function taht print %s, %.
+ * @format: that passed.
+ * Return: no idea.
+ */
+int _printf(char *format, ...)
 {
-    int i;
-    char output[1000];
-    int count = 0;
-    va_list args;
-    va_start(args, format);
+	int i = 0, char_count = 0;
+	va_list args;
+	fun_list my_aar[4] = {{'c', _put}, {'s', _putstr}, {'%', print_perce},
+		{'\0', NULL}};
 
-
-while (*format != '\0')
-{
-    if (*format == '%')
-    {
-        format++;
-        if (*format == 's')
-        {
-            char *s = va_arg(args, char *);
-            int len = my_strlen(s);
-            for (i = 0; i < len; i++)
-            {
-                output[count] = s[i];
-                count++;
-            }
-        }
-    }
-    else
-    {
-        output[count] = *format;
-        count++;
-    }
-    if (count >= 1000 - 1)
-    {
-        print_buffer(output, &count);
-    }
-    format++;
-  }
-    va_end(args);
-    output[count] = '\0';
-    print_buffer(output, &count);
-    return count;
+	if (format == NULL)
+		return (-1);
+	va_start(args, format);
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (*format == ' ' || *format == '\0')
+			{
+				return (-1);
+			}
+			if (*format == '%')
+			{
+				_pchar('%');
+				char_count++;
+				return (-1);
+			}
+			while (i < 4)
+			{
+				if (my_aar[i].c == *format)
+				{
+					char_count += my_aar[i].fptr(format, args);
+					break;
+				}
+				else
+				{
+					_pchar('%');
+					_pchar(*format);
+					char_count++;
+					break;
+				}
+			}
+		}
+		else if (*format == '\0')
+		{
+			return (-1);
+		}
+		else
+		{
+			_pchar(*format);
+			char_count++;
+		}
+		format++;
+	}
+	va_end(args);
+	return (char_count);
 }
-int my_strlen(const char *str)
-{
-    int len = 0;
-    while (*str != '\0')
-    {
-        len++;
-        str++;
-    }
-    return len;
-}
-
-void print_buffer(char buffer[], int *buff_ind)
-{
-    if (*buff_ind > 0)
-    {
-        write(1, buffer, *buff_ind);
-    }
-    *buff_ind = 0;
-}
-
-
