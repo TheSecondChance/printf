@@ -12,7 +12,7 @@
  * @f: function pointer
  */
 
-struct op
+struct sp
 {
 	char *choice;
 	int (*f)(va_list args);
