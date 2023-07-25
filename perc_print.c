@@ -1,19 +1,17 @@
 #include "main.h"
 
 /**
- * _perc - prints percentage
- *
+ * print_perc - print percent if it.
  * @args: argument list
- *
- * Return: number of char printed
+ * Return: number of the char printe.
  */
 
-int _perc(va_list args)
+int print_perc(va_list args)
 {
 	char c = va_arg(args, int);
 
 	if (c == '\0')
 		return (0);
-	_putchar('%');
+	_pchar('%');
 	return (0);
 }
