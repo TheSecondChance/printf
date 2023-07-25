@@ -7,13 +7,14 @@
 
 /**
  * struct op - specifier selecter
+ * @choice: character choice.
  * @f: function pointer to function
  */
 
 struct op
 {
-        char *choice;
-        int (*f)(va_list args);
+	char *choice;
+	int (*f)(va_list args);
 };
 
 int _putchar(int c);
