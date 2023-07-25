@@ -6,16 +6,14 @@
 #include <limits.h>
 
 /**
- * struct sp - choice function
- *
- * @choice: specifier
- * @f: function pointer
+ * struct op - specifier selecter
+ * @f: function pointer to function
  */
 
-struct sp
+struct op
 {
-	char *choice;
-	int (*f)(va_list args);
+        char *choice;
+        int (*f)(va_list args);
 };
 
 int _putchar(int c);
@@ -27,9 +25,6 @@ int _c(va_list);
 int _perc(va_list);
 int get_int(int);
 int un_int(va_list);
-int un_bin(va_list);
-int _oct(va_list);
-int hexprint(va_list);
-int heXprint(va_list);
 
 #endif
+
