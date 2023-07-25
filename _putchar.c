@@ -1,14 +1,12 @@
 #include "main.h"
 
 /**
- * _putchar - prints a single character
- *
- * @c: character to be printed
- *
- * Return: 0 on success, 1 otherwise
+ * _pchar - it's print single cahr
+ * @c: alwys character to print
+ * Return: that print.
  */
 
-int _putchar(int c)
+int _pchar(int c)
 {
 	return (write(1, &c, 1));
 }
