@@ -1,14 +1,12 @@
 #include "main.h"
 
 /**
- * _putchar - prints a single character
- *
- * @c: character to be printed
- *
- * Return: 0 on success, 1 otherwise
- */
-
-int _putchar(int c)
+* _putchar - Entry point...
+* Description: 'the program desc'
+* Return: Always 0 (Success)
+* @c: char parmameterr
+*/
+int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
