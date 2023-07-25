@@ -23,6 +23,12 @@ int un_int(va_list args)
 		_putchar(num % 10 + 48);
 		count++;
 	}
+	else
+	{
+		if (n / 10)
+			get_int(n / 10);
+		_putchar(n % 10 + '0');
+	}
 	return (count);
 }
 
