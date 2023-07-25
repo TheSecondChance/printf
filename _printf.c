@@ -25,6 +25,8 @@ int _printf(char *format, ...)
 			}
 			if (*format == '%')
 			{
+				_pchar('%');
+				char_count++;
 				return (-1);
 			}
 			while (i < 4)
