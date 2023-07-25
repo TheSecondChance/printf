@@ -1,37 +1,37 @@
 #include "main.h"
 
 /**
- * get_int - prints integers
+ * int_new - print that integers passed
  *
- * @n: integer input
+ * @i: integer input parameter
  *
- * Return: count printed
+ * Return: that count printed
  */
 
-int get_int(int n)
+int int_new(int i)
 {
 	int count = 0;
-	unsigned int min;
+	unsigned int unsign;
 
-	if (n == INT_MIN)
+	if (i == INT_MIN)
 	{
-		_putchar('-');
+		_pchar('-');
 		count++;
-		min = (unsigned int)(INT_MIN) * (-1);
-		count += get_int(min / 10) + 1;
-		_putchar(min % 10 + '0');
+		unsign = (unsigned int)(INT_MIN) * (-1);
+		count += int_new(unsign / 10) + 1;
+		_pchar(unsign % 10 + '0');
 	}
 	else
 	{
-		if (n < 0)
+		if (i < 0)
 		{
-			_putchar('-');
-			n = -n;
+			_pchar('-');
+			i = -i;
 			count++;
 		}
 		if (n / 10)
-			count += get_int(n / 10) + 1;
-		_putchar(n % 10 + '0');
+			count += int_new(i / 10) + 1;
+		_pchar(i % 10 + '0');
 	}
 	return (count);
 }

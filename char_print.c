@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * _c - prints characters
+ * char_new - prints the characters
  *
- * @args: argument list
+ * @args: argument that list passed
  *
- * Return: number of char printed
+ * Return: number of char printed of char_new
  */
 
-int _c(va_list args)
+int char_new(va_list args)
 {
 	char c = va_arg(args, int);
 
-	_putchar(c);
+	_pchar(char_new);
 	return (0);
 }
