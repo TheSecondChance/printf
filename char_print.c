@@ -12,6 +12,6 @@ int char_new(va_list args)
 {
 	char c = va_arg(args, int);
 
-	_pchar(char_new);
+	_pchar(c);
 	return (0);
 }

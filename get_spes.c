@@ -13,8 +13,8 @@
 int (*check_value(const char *format, int contain))(va_list args)
 {
 	int i;
-	struct op ops[] = {{"s", _str}, {"i", int_print},
-		{"c", _c}, {"d", int_print}, {"%", _perc}, {"u", un_int}, {NULL, NULL}
+	struct list array[] = {{"s", print_str}, {"i", print_integer},
+		{"c", char_new}, {"d", print_integer}, {"%", print_perc}, {"u", unsign_int}, {NULL, NULL}
 	};
 
 	i = 0;

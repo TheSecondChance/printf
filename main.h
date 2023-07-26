@@ -11,21 +11,22 @@
  * @f: function pointer to function
  */
 
-struct op
+struct list
 {
 	char *choice;
 	int (*f)(va_list args);
 };
 
-int _putchar(int c);
+void print_unsign(int num);
+int _pchar(int c);
 int _printf(const char *format, ...);
-int int_print(va_list);
-int (*get_spes(const char *, int))(va_list);
-int _str(va_list);
-int _c(va_list);
-int _perc(va_list);
-int get_int(int);
-int un_int(va_list);
+int print_integer(va_list);
+int (*check_value(const char *, int))(va_list);
+int print_str(va_list);
+int char_new(va_list);
+int print_perc(va_list);
+int int_new(int);
+int unsign_int(va_list);
 
 #endif
 

@@ -16,7 +16,7 @@ int print_str(va_list args)
 
 	for (i = 0; str[i]; i++)
 	{
-		_putchar(str[i]);
+		_pchar(str[i]);
 		count++;
 	}
 	return (count - 1);

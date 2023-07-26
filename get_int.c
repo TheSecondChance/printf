@@ -29,7 +29,7 @@ int int_new(int i)
 			i = -i;
 			count++;
 		}
-		if (n / 10)
+		if (i / 10)
 			count += int_new(i / 10) + 1;
 		_pchar(i % 10 + '0');
 	}
