@@ -1,9 +1,7 @@
 #include "main.h"
-
 /**
  * unsign_int - print unsigned integer
- * @n: input integer
- *
+ * @args: input integer maybe
  * Return: count printed
  */
 
@@ -12,7 +10,7 @@ int unsign_int(va_list args)
 	unsigned int num;
 	int count = 0;
 	int n;
-	
+
 	n = va_arg(args, int);
 
 	if (n < 0)

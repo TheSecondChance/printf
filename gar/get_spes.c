@@ -14,7 +14,8 @@ int (*check_value(const char *format, int contain))(va_list args)
 {
 	int i;
 	struct list array[] = {{"s", print_str}, {"i", print_integer},
-		{"c", char_new}, {"d", print_integer}, {"%", print_perc}, {"u", unsign_int}, {NULL, NULL}
+		{"c", char_new}, {"d", print_integer}, {"%", print_perc},
+		{"u", unsign_int}, {NULL, NULL}
 	};
 
 	i = 0;
